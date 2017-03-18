@@ -25,9 +25,10 @@ import javax.imageio.ImageIO;
  */
 public class StrangerGame { 
 	static Console c = new Console(30,100);
-
+	static String input;
+	
+	// print each letter one by one
 	public static void text(String data) throws InterruptedException{
-		// print each letter one by one
 		for (int i = 0; i < data.length(); i++) {
 			//c.setTextBackgroundColor(Color.);
 			c.print(data.charAt(i));
@@ -43,9 +44,20 @@ public class StrangerGame {
 		}
 	}
 
+	// check if input is valid
+	public static void checkInput() throws InterruptedException{
+		while (!(input.equalsIgnoreCase("a") || input.equalsIgnoreCase("b"))) {
+			c.setTextColor(Color.red);
+			text("Invalid answer, please try again." + '\n');
+			c.setTextColor(Color.black);
+			input = c.readLine();
+		}
+	}
+
+	// main method
 	public static void main(String[] args) throws InterruptedException {
 		Boolean flag = false; // used in int checks
-		String input;
+	
 		BufferedImage jpgStreet = null;
 		BufferedImage jpgDog = null;
 		BufferedImage pngScrewdriver = null;
@@ -62,107 +74,82 @@ public class StrangerGame {
 			 e.printStackTrace(); 
 			 } 
 			 c.drawImage(jpgStreet, -100, -50, 1067, 711, null);
-			text("It's a cold winter night... " + '\n'
-					+ "You and your friend were just on your way home from a movie, when suddenly, you realize that you guys need bus fare." 
-					+ '\n' + "Do you:" 
+			text("It's a cold winter night... "
+					+ "You and your friend were just on your way home from a movie, when suddenly, you realize that you guys need bus fare. What do you do?" 
 					+ '\n');
 			c.setTextColor(new Color(80, 145, 180));
 			text("a)");
 			c.setTextColor(Color.black);
-			text(" Find an ATM?" + '\n');
+			text(" Find an ATM." + '\n');
 			c.setTextColor(new Color(80, 145, 180));
 			text("b)");
 			c.setTextColor(Color.black);
-			text(" Ask the mysterious man nearby for bus fare?" + '\n');
+			text(" Ask the mysterious man nearby for bus fare." + '\n');
 			
 			// pause after every time program continues to tell the story, get
 			// user to press space to continue with the game/story???
 			input = c.readLine(); // stores the response of the user
-			while (!(input.equalsIgnoreCase("a") || input.equalsIgnoreCase("b"))) {
-				c.setTextColor(Color.red);
-				text("Invalid answer, please try again." + '\n');
-				c.setTextColor(Color.black);
-				input = c.readLine();
-			}
+			checkInput();
 			if (input.equalsIgnoreCase("a")) {
 				c.clear();
-				text("The mysterious man follows you." + '\n' + "Do you:" + '\n');
+				text("The mysterious man follows you. What do you do?" + '\n');
 				c.setTextColor(new Color(80, 145, 180)); // change text color to blue
 				text("a)");
 				c.setTextColor(Color.black);
-				text(" Address him" + '\n');
+				text(" Ignore him." + '\n');
 				c.setTextColor(new Color(80, 145, 180));
 				text("b)");
 				c.setTextColor(Color.black); 
-				text(" Ignore him" + '\n');
+				text(" Address him." + '\n');
 				input = c.readLine();
 				// prevents program from crashing if user enters invalid response
-				while (!(input.equalsIgnoreCase("a") || input.equalsIgnoreCase("b"))) {
-					c.setTextColor(Color.red);
-					text("Invalid answer, please try again." +'\n');
-					c.setTextColor(Color.black);
-					input = c.readLine();
-				}
-
-				if (input.equalsIgnoreCase("ignore him")) {
+				checkInput();
+				if (input.equalsIgnoreCase("a")) {
+					c.clear();
 					text("You and your friend get killed by the man." + '\n');
 					Thread.sleep(1000);
 				} else {
-					text("He invites you both to his apartment. Do you accept his invitation? (");
+					text("He invites you both to his apartment. Do you accept his invitation?" + '\n');
 					c.setTextColor(new Color(80, 145, 180));
-					text("yes ");
+					text("a)");
 					c.setTextColor(Color.black);
-					text("or ");
+					text(" Yes" + '\n');
 					c.setTextColor(new Color(80, 145, 180));
-					text("no");
+					text("b)");
 					c.setTextColor(Color.black);
-					text(")" + '\n');
+					text(" No" + '\n');
 					input = c.readLine();
-					while (!(input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no"))) {
-						c.setTextColor(Color.red);
-						text("Invalid answer, please try again." + '\n');
-						c.setTextColor(Color.black);
-						input = c.readLine();
-					}
-					if (input.equalsIgnoreCase("yes")) {
+					checkInput();
+					if (input.equalsIgnoreCase("a")) {
+						c.clear();
 						text("You and your friend go to his apartment and have an awesome time!" + '\n');
 						Thread.sleep(1000);
 					} else {
-						text("He robs both of you and leaves you on the street. Do you ");
+						text("He robs both of you and leaves you on the street. What do you do?" + '\n');
 						c.setTextColor(new Color(80, 145, 180));
-						text("follow ");
+						text("a)");
 						c.setTextColor(Color.black);
-						text("him or ");
+						text(" Follow him." + '\n');
 						c.setTextColor(new Color(80, 145, 180));
-						text("find help");
+						text("b)");
 						c.setTextColor(Color.black);
-						text("?" + '\n');
+						text(" Find help." + '\n');
 						input = c.readLine();
-						while (!(input.equalsIgnoreCase("follow") || input.equalsIgnoreCase("find help"))) {
-							c.setTextColor(Color.red);
-							text("Invalid answer, please try again." +'\n');
-							c.setTextColor(Color.black);
-							input = c.readLine();
-						}
-						if (input.equalsIgnoreCase("follow")) {
+						checkInput();
+						if (input.equalsIgnoreCase("a")) {
 							c.clear();
-							text("You end up at his apartment. The door is unlocked. Do you enter? (");
+							text("You end up at his apartment. The door is unlocked. Do you enter?" + '\n');
 							c.setTextColor(new Color(80, 145, 180));
-							text("yes ");
+							text("a)");
 							c.setTextColor(Color.black);
-							text("or ");
+							text(" Yes." + '\n');
 							c.setTextColor(new Color(80, 145, 180));
-							text("no");
+							text("b)");
 							c.setTextColor(Color.black);
-							text(")" +'\n');
+							text(" No." +'\n');
 							input = c.readLine();
-							while (!(input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no"))) {
-								c.setTextColor(Color.red);
-								text("Invalid answer, please try again." + '\n');
-								c.setTextColor(Color.black);
-								input = c.readLine();
-							}
-							if (input.equalsIgnoreCase("yes")) {
+							checkInput();
+							if (input.equalsIgnoreCase("a")) {
 								int x = (int) (Math.random() * 2 + 1);
 								if (x == 2) {
 									try{
@@ -200,65 +187,50 @@ public class StrangerGame {
 					text("You and your friend get your bus fare and go home." + '\n');
 				} else {
 					c.clear();
-					text("The man pulls a knife on you and your friend. Do you ");
+					text("The man pulls a knife on you and your friend. What do you do?" + '\n');
 					c.setTextColor(new Color(80, 145, 180));
-					text("fight");
+					text("a)");
 					c.setTextColor(Color.black);
-					text(", or do you ");
+					text(" Fight." + '\n');
 					c.setTextColor(new Color(80, 145, 180));
-					text("run");
+					text("b)");
 					c.setTextColor(Color.black);
-					text("?" + '\n');
+					text(" Run." + '\n');
 					input = c.readLine();
-					while (!(input.equalsIgnoreCase("run") || input.equalsIgnoreCase("fight"))) {
-						c.setTextColor(Color.red);
-						text("Invalid answer, please try again." +'\n');
-						c.setTextColor(Color.black);
-						input = c.readLine();
-					} // checks for valid input
-					if (input.equalsIgnoreCase("fight")) {
+					checkInput();
+					if (input.equalsIgnoreCase("a")) {
 						c.clear();
 						text("You die tragically, but your friend escapes safely" + '\n'); // ending
 					} else {
 						c.clear();
-						text("You get away but the man apprehends your friend. Do you ");
+						text("You get away but the man apprehends your friend. What do you do?" + '\n');
 						c.setTextColor(new Color(80, 145, 180));
-						text("run");
+						text("a)");
 						c.setTextColor(Color.black);
-						text(", or ");
+						text(" Run." + '\n');
 						c.setTextColor(new Color(80, 145, 180));
-						text("help");
+						text("b)");
 						c.setTextColor(Color.black);
-						text("?" + '\n');
+						text(" Help your friend." + '\n');
 						input = c.readLine();
-						while (!(input.equalsIgnoreCase("run") || input.equalsIgnoreCase("help"))) {
-							c.setTextColor(Color.red);
-							text("Invalid answer, please try again." +'\n');
-							c.setTextColor(Color.black);
-							input = c.readLine();
-						}
-						if (input.equalsIgnoreCase("run")) {
+						checkInput();
+						if (input.equalsIgnoreCase("a")) {
 							c.clear();
 							text("You escape safely but your friend is slain." + '\n'); // ending
 
 						} else {
-							text("do you try to ");
+							text("Do you try to negotiate or fight?" + '\n');
 							c.setTextColor(new Color(80, 145, 180));
-							text("negotiate");
+							text("a)");
 							c.setTextColor(Color.black);
-							text(", or ");
+							text(" Negotiate." + '\n');
 							c.setTextColor(new Color(80, 145, 180));
-							text("fight");
+							text("b)");
 							c.setTextColor(Color.black);
-							text("?" + '\n');
+							text(" Fight." + '\n');
 							input = c.readLine();
-							while (!(input.equalsIgnoreCase("negotiate") || input.equalsIgnoreCase("fight"))) {
-								c.setTextColor(Color.red);
-								text("Invalid answer, please try again." +'\n');
-								c.setTextColor(Color.black);
-								input = c.readLine();
-							}
-							if (input.equalsIgnoreCase("negotiate")) {
+							checkInput();
+							if (input.equalsIgnoreCase("a")) {
 								x = (int) (Math.random() * 11);
 								System.err.println(x); // for testing purposes
 								text("Guess a number from ");
@@ -291,32 +263,26 @@ public class StrangerGame {
 										c.clear();
 										text("You negotiated successfully, you and your friend go home safely" + '\n'); // ending
 									} else {
-										text("you guessed wrong" + '\n');
-										if (i == 2)
+										text("You guessed incorrectly. Try again." + '\n');
+										if (i == 2){
 											c.clear();
 											text("You failed to negotiate and the man kills both of you." + '\n'); // ending
+										}
 									}
-								}
-
-								// for loop end
+								} // for loop end
 							} else {
-								text("Do you ");
+								text("Do you fight immediately or find a weapon?" + '\n');
 								c.setTextColor(new Color(80, 145, 180));
-								text("find a weapon");
+								text("a)");
 								c.setTextColor(Color.black);
-								text(", or ");
+								text(" Fight immediately." + '\n');
 								c.setTextColor(new Color(80, 145, 180));
-								text("fight immediately");
+								text("b)");
 								c.setTextColor(Color.black);
-								text("?" + '\n');
+								text(" Find a weapon." + '\n');
 								input = c.readLine();
-								while (!(input.equalsIgnoreCase("find a weapon") || input.equalsIgnoreCase("fight immediately"))) {
-									c.setTextColor(Color.red);
-									text("Invalid answer, please try again." +'\n');
-									c.setTextColor(Color.black);
-									input = c.readLine();
-								}
-								if (input.equalsIgnoreCase("fight immediately")) {
+								checkInput();
+								if (input.equalsIgnoreCase("a")) {
 									c.clear();
 									text("You and your friend die because you attacked an armed man without a weapon." +'\n'); // ending
 								} else {
@@ -356,23 +322,18 @@ public class StrangerGame {
 										c.setTextColor(Color.green);
 										text(weapons[i]);
 										c.setTextColor(Color.black);
-										text(". Do you ");
+										text(". Do you pick it up or find a better weapon?" + '\n');
 										c.setTextColor(new Color(80, 145, 180));
-										text("pick it up");
+										text("a)");
 										c.setTextColor(Color.black);
-										text(", or ");
+										text(" Pick it up." + '\n');
 										c.setTextColor(new Color(80, 145, 180));
-										text("find a better weapon");
+										text("b)");
 										c.setTextColor(Color.black);
-										text("?" + '\n');
+										text(" Find a better weapon." + '\n');
 										input = c.readLine();
-										while (!(input.equalsIgnoreCase("pick it up") || input.equalsIgnoreCase("find a better weapon"))) {
-											c.setTextColor(Color.red);
-											text("Invalid answer, please try again." +'\n');
-											c.setTextColor(Color.black);
-											input = c.readLine();
-										}
-										if (input.equalsIgnoreCase("pick it up")) {
+										checkInput();
+										if (input.equalsIgnoreCase("a")) {
 											c.clear();
 											int weaponStrength = (i + 1) * 2; // determines likelihood of success
 											x = (int) (Math.random() * 9);
@@ -401,23 +362,18 @@ public class StrangerGame {
 				}
 
 			}
-			text("Play again (");
+			text("Play again?" + '\n');
 			c.setTextColor(new Color(80, 145, 180));
-			text("y");
+			text("a)");
 			c.setTextColor(Color.black);
-			text("/");
+			text(" Yes." + '\n');
 			c.setTextColor(new Color(80, 145, 180));
-			text("n");
+			text("b)");
 			c.setTextColor(Color.black);
-			text(")?" + '\n');
+			text(" No." + '\n');
 			input = c.readLine();
-			while (!(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("n"))) {
-				c.setTextColor(Color.red);
-				text("Invalid answer, please try again." +'\n');
-				c.setTextColor(Color.black);
-				input = c.readLine();
-			}
-		} while (input.equalsIgnoreCase("y"));
+			checkInput();
+		} while (input.equalsIgnoreCase("a"));
 		c.clear();
 		c.close(); // close the console
 	}

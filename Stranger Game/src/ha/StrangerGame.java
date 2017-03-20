@@ -661,7 +661,7 @@ public class StrangerGame {
 											c.drawImage(pngBaseballBat, 0, 80, 800, 800, null);
 										}
 										text("There is");
-										c.setTextColor(Color.green);
+										c.setTextColor(new Color(85, 160, 85));
 										text(weapons[i]);
 										c.setTextColor(Color.black);
 										text(". Do you pick it up or find a better weapon?" + '\n');

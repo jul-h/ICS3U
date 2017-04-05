@@ -122,7 +122,7 @@ public class StrangerGame {
 				try {
 					Clip footsteps = AudioSystem.getClip(); 
 					footsteps.open(AudioSystem.getAudioInputStream(new File("resources/audio/footsteps.wav")));
-					footsteps.start(); //start sound
+					footsteps.start(); 
 					footsteps.loop(Clip.LOOP_CONTINUOUSLY);
 					text("The mysterious man follows you. What do you do?" + '\n');
 					c.setTextColor(new Color(15, 152, 152));

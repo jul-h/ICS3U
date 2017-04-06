@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 
 public class gcf {
-	
+
 	// main method
 	public static void main(String[] args){
 		Scanner s = new Scanner (System.in);
@@ -22,7 +22,13 @@ public class gcf {
 		int y = s.nextInt(); // get second number from user
 		System.out.println("The GCF of these two numbers are: " + gcf(x, y) + ".");
 	}// main method end
-	
+
+	/**
+	 * This method determines if a number is divisible by another number
+	 * @param a First number that user inputs 
+	 * @param b Second number that user inputs
+	 * @return true or false
+	 */
 	// isDivisble method
 	public static boolean isDivisible(int a, int b){
 		if (a%b==0){
@@ -30,7 +36,13 @@ public class gcf {
 		}
 		return false;
 	} // isDivisible method end
-	
+
+	/**
+	 * This method calculates the GCF of two numbers
+	 * @param a First number that user inputs
+	 * @param b Second number that user inputs
+	 * @return The GCF of the two numbers
+	 */
 	// gcf method
 	public static int gcf(int a, int b){
 		int high = 0;
@@ -47,9 +59,9 @@ public class gcf {
 			num = a;
 			return num;
 		}
-		
+
 		for (int i=low;i>0;i--){
-			if (high % i == 0 && low % i == 0){
+			if (isDivisible(high, i) && isDivisible(low, i)){
 				return i;
 			}
 		}

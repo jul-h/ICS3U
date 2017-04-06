@@ -17,9 +17,15 @@ public class sumDigits {
 		Scanner s = new Scanner (System.in);
 		System.out.println("Please enter a number.");
 		int x = s.nextInt(); //get a number from user
-		System.out.println(sumDigits(x));
+		System.out.println(sumDigits(x) + " is the sum of the digits of " + x + ".");
 	} //main method end
+
 	
+/**
+ * This method calculates the sum of the digits of the number that the user inputs
+ * @param x The number that the user inputs to find the sum of the digits of 
+ * @return The sum of the digits of the number
+ */
 	//sumDigits method
 	public static int sumDigits(int x){
 		int total = 0; 

@@ -21,7 +21,7 @@ public class largestNumber {
 		int amount = s.nextInt(); // get the number of numbers that the user will input
 		int[] numbers = new int[amount];
 		System.out.println("Please enter the numbers.");
-		for (int i=0; i<amount; i++){
+		for (int i = 0; i < amount; i++){
 			numbers[i] = s.nextInt(); 
 		}
 		System.out.println(largestNum(numbers) + " is the largest number.");
@@ -35,8 +35,8 @@ public class largestNumber {
 	//largestNum method
 	public static int largestNum(int[] values){
 		int highestNum = values[0];
-		for(int i = 1; i<values.length;i++){
-			if (values[i]>highestNum){
+		for(int i = 1; i < values.length; i++){
+			if (values[i] > highestNum){
 				highestNum = values[i];
 			}
 		}

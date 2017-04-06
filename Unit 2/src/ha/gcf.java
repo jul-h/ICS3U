@@ -60,7 +60,7 @@ public class gcf {
 			return num;
 		}
 
-		for (int i=low;i>0;i--){
+		for (int i=low; i>0; i--){
 			if (isDivisible(high, i) && isDivisible(low, i)){
 				return i;
 			}

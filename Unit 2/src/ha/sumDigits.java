@@ -29,9 +29,9 @@ public class sumDigits {
 	//sumDigits method
 	public static int sumDigits(int x){
 		int total = 0; 
-		while (x>0){
+		while (x > 0){
 			total = total + x % 10;
-			x = x/10;
+			x = x / 10;
 		}
 		return total;
 	} //sumDigits method end

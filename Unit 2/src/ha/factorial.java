@@ -27,13 +27,13 @@ public class factorial {
 	 */
 	// factorial method
 	public static int factorial (int x){
-		if (x<0){
+		if (x < 0){
 			return -1;
-		} else if (x==0){
+		} else if (x == 0){
 			return 1;
 		} else{
 			int product = x;
-			while (x>1){
+			while (x > 1){
 				product = product*(x-1);
 				x--;
 			}

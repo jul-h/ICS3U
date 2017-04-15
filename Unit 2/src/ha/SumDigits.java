@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 /**
  * 
- * sumDigits.java
+ * SumDigits.java
  * This program determines the sum of the digits of a number.
  * Created March 31, 2017
  * @author Julie Ha
  *
  */
 
-public class sumDigits {
+public class SumDigits {
 	//main method
 	public static void main(String[] args){
-		Scanner s = new Scanner (System.in);
+		Scanner scan = new Scanner (System.in);
 		System.out.println("Please enter a number.");
-		int x = s.nextInt(); //get a number from user
+		int x = scan.nextInt(); //get a number from user
 		System.out.println(sumDigits(x) + " is the sum of the digits of " + x + ".");
 	} //main method end
 

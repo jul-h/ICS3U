@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 /**
  * 
- * factorial.java
+ * Factorial.java
  * This program determines the factorial of a number.
  * Created March 31, 2017
  * @author Julie Ha
  *
  */
 
-public class factorial {
+public class Factorial {
 	// main method
 	public static void main (String[] args){
-		Scanner s = new Scanner (System.in);
+		Scanner scan = new Scanner (System.in);
 		System.out.println("Please enter a number that you want to find the factorial of.");
-		int x = s.nextInt(); // get a number from user
+		int x = scan.nextInt(); // get a number from user
 		System.out.println(factorial(x));
 	} // main method end
 

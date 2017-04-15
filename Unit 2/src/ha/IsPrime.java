@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 /**
  * 
- * isPrime.java
+ * IsPrime.java
  * This program determines whether a number is a prime number or not.
  * Created March 31, 2017
  * @author Julie Ha
  *
  */
 
-public class isPrime {
+public class IsPrime {
 
 	// main method
 	public static void main (String[] args){
-		Scanner s = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter a number to see if it is a prime number or not."); 
-		int num = s.nextInt(); //gets user input
+		int num = scan.nextInt(); //gets user input
 		System.out.println(isPrime(num));
 	} // main method end
 

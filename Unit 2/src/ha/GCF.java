@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 /**
  * 
- * gcf.java
+ * GCF.java
  * This program determines the GCF of two numbers.
  * Created March 31, 2017
  * @author Julie Ha
  *
  */
 
-public class gcf {
+public class GCF {
 
 	// main method
 	public static void main(String[] args){
-		Scanner s = new Scanner (System.in);
+		Scanner scan = new Scanner (System.in);
 		System.out.println("Please enter a number.");
-		int x = s.nextInt(); // get first number from user
+		int x = scan.nextInt(); // get first number from user
 		System.out.println("Please enter another number.");
-		int y = s.nextInt(); // get second number from user
+		int y = scan.nextInt(); // get second number from user
 		System.out.println("The GCF of these two numbers are: " + gcf(x, y) + ".");
 	}// main method end
 

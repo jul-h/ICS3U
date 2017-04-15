@@ -4,25 +4,25 @@ import java.util.Scanner;
 
 /**
  * 
- * largestNumber.java
+ * LargestNumber.java
  * This program determines what the largest number in a set of numbers is.
  * Created March 31, 2017
  * @author Julie Ha
  *
  */
 
-public class largestNumber {
+public class LargestNumber {
 	
 	//main method
 	public static void main(String[] args){
-		Scanner s = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 
 		System.out.println("How many numbers do you want to input?");
-		int amount = s.nextInt(); // get the number of numbers that the user will input
+		int amount = scan.nextInt(); // get the number of numbers that the user will input
 		int[] numbers = new int[amount];
 		System.out.println("Please enter the numbers.");
 		for (int i = 0; i < amount; i++){
-			numbers[i] = s.nextInt(); 
+			numbers[i] = scan.nextInt(); 
 		}
 		System.out.println(largestNum(numbers) + " is the largest number.");
 	} //main method end

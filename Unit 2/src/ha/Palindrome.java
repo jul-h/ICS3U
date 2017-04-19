@@ -24,6 +24,7 @@ public class Palindrome {
 			if (word.charAt(i) != word.charAt(word.length()-1-i)){
 				return false;
 			}
+			
 		}
 		return true;
 	} // isPalindrome method end
@@ -40,6 +41,10 @@ public class Palindrome {
 			System.out.println(isPalindrome(word));
 			System.out.println("Do you want to enter another word?");
 			answer = scan.nextLine();
+			while (!(answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no"))){
+				System.out.println("Invalid input. Please enter 'yes' or 'no'");
+				answer = scan.nextLine();
+			}
 		} while (answer.equalsIgnoreCase("yes"));
 	} // main method end
 }

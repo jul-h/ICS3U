@@ -28,7 +28,7 @@ public class PerfectIntegers {
 	public static boolean isPerfect(int num){
 		int sum = 0;
 		for (int i = 1; i < num; i++){
-			if (num % i == 0)
+			if (isDivisible(num, i))
 				sum += i;
 		}
 		if (sum == num){
@@ -36,5 +36,19 @@ public class PerfectIntegers {
 		}
 		return false;
 	} // isPerfect Method end
+	
+	/**
+	 * This method determines if a number is divisible by another number
+	 * @param a First number that user inputs 
+	 * @param b Second number that user inputs
+	 * @return true or false
+	 */
+	// isDivisble method
+	public static boolean isDivisible(int a, int b){
+		if (a % b == 0){
+			return true;
+		}
+		return false;
+	} // isDivisible method end
 
 }

@@ -7,31 +7,33 @@ package ha;
  * @author Julie Ha
  */
 public class PythagoreanTriple {
+
 	public static void main(String[] args) {
-		//double c = 0;
-		int num = 0;
+		System.out.println("Pythagorean triples are:");
+		
 		for (int a = 1; a < 100; a++){
 			for (int b = 1; b < 100; b++){
-				for (int c = 1; c < Math.pow(a, 2) + Math.pow(b,  2); c++){
-					if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c,  2) && perfectSquare(num)){
-						System.out.println(a + " " + b + " " + c);
-					}
-					/*
-					cSquare = (int) (Math.pow(a, 2) + Math.pow(b, 2));
-					c = Math.sqrt(cSquare);
-						if (perfectSquare(cSquare) == true){
-							System.out.println(a + " " + b + " " + c);
-						}
-					 */
+				
+				int cSquare = (int) (Math.pow(a, 2) + Math.pow(b, 2));
+				int c = (int) (Math.sqrt(cSquare));
+				
+				if ((Math.pow(a,  2) + Math.pow(b,  2) == Math.pow(c,  2)) && perfectSquare(cSquare)){
+					System.out.println(a + " " + b + " " + c);
 				}
 			}
 		}
 	}
 
-
+	/**
+	 * This method determines of c is a perfect square
+	 * @param num
+	 * @return true or false
+	 */
+	//perfectSquare method
 	public static boolean perfectSquare(int num){
-		int srt = (int)Math.sqrt(num);
-		double check = Math.pow(num, 2);
+		int x = (int)Math.sqrt(num);
+		double check = Math.pow(x, 2);
+		
 		if (num == check){
 			return true;
 		}

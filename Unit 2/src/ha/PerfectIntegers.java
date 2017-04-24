@@ -12,7 +12,10 @@ public class PerfectIntegers {
 
 	// main method
 	public static void main(String[] args) {
+		System.out.println("Perfect integers between 1 ad 100 are:");
+		
 		for (int num = 1; num < 100; num++){
+			
 			if(isPerfect(num)){
 				System.out.println(num);
 			}
@@ -20,14 +23,16 @@ public class PerfectIntegers {
 	} //main method end
 
 	/**
-	 * This method determines whether or not 
+	 * This method determines whether or not num is a perfect integer
 	 * @param num Number to check if it's a perfect integer or not
-	 * @return The number if true (if number is indeed a perfect integer)
+	 * @return true or false
 	 */
 	// isPerfect Method
 	public static boolean isPerfect(int num){
 		int sum = 0;
+		
 		for (int i = 1; i < num; i++){
+			
 			if (isDivisible(num, i))
 				sum += i;
 		}

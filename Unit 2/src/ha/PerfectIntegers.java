@@ -12,7 +12,7 @@ public class PerfectIntegers {
 
 	// main method
 	public static void main(String[] args) {
-		System.out.println("Perfect integers between 1 ad 100 are:");
+		System.out.println("Perfect integers between 1 and 100 are:");
 		
 		for (int num = 1; num < 100; num++){
 			

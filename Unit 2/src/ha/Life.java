@@ -131,7 +131,7 @@ public class Life {
 
 
 			int dead = 0; // counter to determine if all the cells are dead
-			
+
 			for(int i = 0; i < grid.length; i++){
 				for(int j = 0; j < grid[i].length; j++){
 
@@ -151,7 +151,7 @@ public class Life {
 				} // 2nd for loop end
 				System.out.println();
 			} // 1st for loop end
-			
+
 			System.out.println("\nDo you want to see the next day (yes or no)?");
 			input = scan.next();
 
@@ -162,7 +162,6 @@ public class Life {
 			}
 
 		} while (!(input.equalsIgnoreCase("no")));
-
 
 		System.out.println("\nThe Game of Life has ended.");
 	} // main method end

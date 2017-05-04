@@ -1,5 +1,6 @@
 package ha;
 
+
 import java.util.Scanner;
 
 public class ColdestCity {

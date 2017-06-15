@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Culminating/src"/>
+	<classpathentry kind="src" path="dmoj/src"/>
+	<classpathentry kind="src" path="Hello/src"/>
+	<classpathentry kind="src" path="NXT/src"/>
+	<classpathentry kind="src" path="Stranger Game/src"/>
+	<classpathentry kind="src" path="Unit 2/src"/>
+	<classpathentry kind="lib" path="hsa_new.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="Stranger Game/bin"/>
+</classpath>

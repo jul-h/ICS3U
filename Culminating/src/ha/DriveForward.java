@@ -2,6 +2,7 @@ package ha;
 
 import lejos.nxt.Motor;
 import lejos.robotics.subsumption.Behavior;
+import lejos.util.Delay;
 
 public class DriveForward implements Behavior {
 	private boolean suppressed = false;
@@ -15,9 +16,11 @@ public class DriveForward implements Behavior {
 		suppressed = false;
 		Motor.A.forward();
 		Motor.C.forward();
-		while (!suppressed)
+		while (!suppressed){
 			Thread.yield();
+		}
 		Motor.A.stop();
 		Motor.C.stop();
 	}
+
 }
